@@ -44,6 +44,37 @@
     // Finish the command buffer and immediately submit it.
     device.queue.submit([encoder.finish()]);
 
+
+    // Triangle  vertices
+    const vertices = new Float32Array([
+      //   X,    Y,
+      -0.8, -0.8, // Triangle 1 (Blue)
+      0.8, -0.8,
+      0.8, 0.8,
+
+      -0.8, -0.8, // Triangle 2 (Red)
+      0.8, 0.8,
+      -0.8, 0.8,
+    ]);
+
+    // Create VBO
+    const vertexBuffer = device.createBuffer({
+      label: "Cell vertices",
+      size: vertices.byteLength,
+      usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
+    });
+    // Write vertice to VBO
+    device.queue.writeBuffer(vertexBuffer, /*bufferOffset=*/0, vertices);
+    // Define vertex attributes
+    const vertexBufferLayout = {
+      arrayStride: 8,
+      attributes: [{
+        format: "float32x2",
+        offset: 0,
+        shaderLocation: 0, // Position, see vertex shader
+      }],
+    };
+
   </script>
 </body>
 
