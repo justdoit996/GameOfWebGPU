@@ -1,6 +1,6 @@
 ### Game of WebGPU
 
-https://steamedhams42.github.io/GameOfWebGPU/
+https://justdoit996.github.io/GameOfWebGPU/
 
 ![image](screenshot.png)
 
