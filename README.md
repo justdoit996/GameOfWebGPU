@@ -2,7 +2,7 @@
 
 https://justdoit996.github.io/GameOfWebGPU/
 
-![image](screenshot.png)
+
 
 
 
